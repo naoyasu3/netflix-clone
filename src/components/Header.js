@@ -7,24 +7,31 @@ import { ic_keyboard_arrow_right } from "react-icons-kit/md/ic_keyboard_arrow_ri
 
 class Header extends Component {
   render() {
-    const title = "映画やTV番組、 \nアニメが見放題";
     return (
       <HeaderComponent className="header-container">
         <div className="header-top">
           <Logo src={logo} alt="logo" />
           <NavLink to="#" className="signIn-btn">
-            Sign In
+            ログイン
           </NavLink>
         </div>
         <div className="header-content">
-          <Title>{title}</Title>
+          <Title>
+            映画やTV番組、 <br />
+            アニメが見放題
+          </Title>
           <SubTitle>
-            映画やドラマをもっと自由に。いつでもキャンセルOK。
+            映画やドラマをもっと自由に。
+            <br />
+            いつでもキャンセルOK。
           </SubTitle>
           <Link className="main-offer-btn" to="#">
             メンバー登録する
             <Icon className="Icon" icon={ic_keyboard_arrow_right} size={37} />
           </Link>
+          <EmailFormTitle>
+            まもなくご視聴いただけます!メールアドレスを入力してアカウントを作成またはログインしてください。
+          </EmailFormTitle>
         </div>
       </HeaderComponent>
     );
@@ -40,7 +47,7 @@ const Logo = styled.img`
   height: 3.5rem;
   position: absolute;
   top: 25%;
-  left: 50%;
+  left: 7%;
   transform: translate(-50%, -50%);
 `;
 
@@ -86,15 +93,17 @@ const HeaderComponent = styled.div`
 
   // Main Offer Btn
   .main-offer-btn {
+    min-height: 60px;
     display: inline-block;
+    width: auto;
     background: var(--main-red);
     text-transform: uppercase;
     border: none;
     outline: none;
-    margin: 0 33%;
-    padding: 1.5rem;
+    margin: 0 33% 10px 33%;
+    padding: 5.6px 52px 5.6px 25.8px;
     border-radius: 0.1875rem;
-    font-size: 2rem;
+    font-size: 1.625rem;
     text-align: center;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
     transition: background 0.2s ease-in;
@@ -113,16 +122,20 @@ const HeaderComponent = styled.div`
 // Main Title
 const Title = styled.h1`
   margin: 0 0 1.2rem;
-  font-size: 5rem;
+  font-size: 3.125rem;
   font-weight: 700;
   line-height: 1.1em;
 `;
 
 // SubTitle
 const SubTitle = styled.h2`
-  font-weight: 400;
-  font-size: 1.875rem;
-  line-height: 1.25rem;
-  margin: 0 0 1.875rem;
-  text-transform: uppercase;
+  font-weight: normal;
+  max-width: 640px;
+  font-size: 1.625rem;
+  margin: 1rem auto;
+`;
+
+const EmailFormTitle = styled.h3`
+  margin: 0 auto;
+  font-size: 1.2rem;
 `;

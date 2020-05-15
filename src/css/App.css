@@ -25,8 +25,9 @@ a {
 
 .header-container {
   width: 100vw;
-  height: 90vh;
+  height: 722.594px;
   position: relative;
+  border-bottom: 8px solid #222;
   background: radial-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),
     url(../img/bg.jpg) no-repeat center center/cover;
 }

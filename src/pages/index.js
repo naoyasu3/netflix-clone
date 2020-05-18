@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Header from "../components/Header";
 import Contents from "../components/Contents/Contents";
+import Footer from "../components/Footer";
 
 class Main extends Component {
   state = {
@@ -44,6 +45,23 @@ class Main extends Component {
         CTA: null,
         flipped: true,
       },
+      {
+        headline: "ど﻿こ﻿で﻿も観﻿ら﻿れ﻿る",
+        number: 3,
+        subHeadline:
+          "ス﻿マ﻿ー﻿トフ﻿ォ﻿ン﻿やタ﻿ブ﻿レ﻿ッ﻿ト﻿、パ﻿ソ﻿コ﻿ン﻿やテ﻿レ﻿ビな﻿ど﻿、た﻿く﻿さ﻿ん﻿の機﻿器﻿でた﻿く﻿さ﻿ん﻿の映﻿画やTV﻿番﻿組﻿をお﻿楽﻿し﻿みく﻿だ﻿さ﻿い﻿。",
+        image:
+          "https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-jp.png",
+        video:
+          "https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-jp.m4v",
+        animation: "",
+        animationMessages: [],
+        imageRef: "ƒ imageRef() {}",
+        trackingPixel: "<n />",
+        handleTap: "ƒ bound f() {}",
+        cardName: "watchOnDevice",
+        CTA: null,
+      },
     ],
   };
 
@@ -53,6 +71,7 @@ class Main extends Component {
       <div>
         <Header />
         {contents}
+        <Footer />
       </div>
     );
   }

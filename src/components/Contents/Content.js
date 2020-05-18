@@ -1,36 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import WatchOnTv from "./WatchOnTv";
+import Mobile from "./Mobile";
+import AnotherDevice from "./another_device";
 
 const content = (props) => {
-  let watchOnTv = null;
-  let mobile = null;
-  if (props.number === 1) {
-    watchOnTv = (
-      <div className="our-story-card-animation-container">
-        <TvImg src={props.image} />
-        <div className="animation-card">
-          <TvVideo>
-            <source src={props.video} type="video/mp4" />
-          </TvVideo>
-        </div>
-      </div>
-    );
-  }
-
-  if (props.number === 2) {
-    mobile = (
-      <div>
-        <div className="our-story-card-animation-container">
-          <TvImg src={props.image} />
-          <div className="animation-card">
-            <TvVideo>
-              <source src={props.video} type="video/mp4" />
-            </TvVideo>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  let watchOnTv = <WatchOnTv image={props.image} video={props.video} />;
+  let mobile = <Mobile image={props.image} video={props.video} />;
+  let anotherDevice = <AnotherDevice image={props.image} video={props.video} />;
 
   const flippedClassName = props.flipped
     ? "our-story-card-text-left"
@@ -39,12 +16,13 @@ const content = (props) => {
   return (
     <ContentContainer className="main-content">
       <div className="animation-card-container">
-        {mobile}
+        {props.number === 2 ? mobile : null}
         <div className={flippedClassName}>
           <h1>{props.headline}</h1>
           <h2>{props.subHeadline}</h2>
         </div>
-        {watchOnTv}
+        {props.number === 1 ? watchOnTv : null}
+        {props.number === 3 ? anotherDevice : null}
       </div>
     </ContentContainer>
   );

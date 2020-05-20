@@ -47,7 +47,7 @@ const ContentContainer = styled.div`
     -webkit-box-pack: justify;
     justify-content: space-between;
   }
-  
+
   .our-story-card-text-right {
     width: 52%;
     height: 100%;
@@ -76,7 +76,7 @@ const ContentContainer = styled.div`
     margin: -10% -5% -5% 0;
     position: relative;
     overflow: hidden;
-}
+  }
 
   .animation-card {
     width: 100%;
@@ -88,18 +88,4 @@ const ContentContainer = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  }
-`;
-
-const TvImg = styled.img`
-  position: relative;
-  z-index: 2;
-  max-width: 100%;
-  height: auto;
-  border: 0;
-`;
-
-const TvVideo = styled.video`
-  width: 100%;
-  height: 100%;
 `;

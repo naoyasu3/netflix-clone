@@ -1,58 +1,61 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Icon } from "react-icons-kit";
 import { iosWorld } from "react-icons-kit/ionicons/iosWorld";
 import { arrowSortedDown } from "react-icons-kit/typicons/arrowSortedDown";
 
-const state = {
-  langContent: false,
-};
-
-let handleToggle;
-
-const Footer = (props) => {
-  handleToggle = (e) => {
-    e.preventDefault();
-    state({
-      langContent: !state.langContent,
-    });
+class Footer extends Component {
+  state = {
+    langContent: false,
   };
 
-  return (
-    <FooterContainer>
-      <SiteFooterWrapper>
-        <SiteFooter>
-          <FooterTop>
-            ご質問ですか? お問い合せはこちらまで: <Link>0120-996-012</Link>
-          </FooterTop>
-          <FooterLinks>
-            <FooterLinkItem>
-              <Link>よくあるご質問</Link>
-            </FooterLinkItem>
-          </FooterLinks>
-          <div className="lang-selection-container" onClick={handleToggle}>
-            <Icon icon={iosWorld} size={20} />
-            日本語
-            <Icon icon={arrowSortedDown} />
-          </div>
-          {/*toggle language content*/}
-          {state.langContent && (
-            <div className="lang-toggle">
-              <ul>
-                <li>日本語</li>
-              </ul>
-              <ul>
-                <li>English</li>
-              </ul>
+  handleToggle = (e) => {
+    e.preventDefault();
+    this.setState({
+      langContent: !this.state.langContent,
+    });
+  };
+  render(props) {
+    return (
+      <FooterContainer>
+        <SiteFooterWrapper>
+          <SiteFooter>
+            <FooterTop>
+              ご質問ですか? お問い合せはこちらまで: <Link>0120-996-012</Link>
+            </FooterTop>
+            <FooterLinks>
+              <FooterLinkItem>
+                <Link>よくあるご質問</Link>
+              </FooterLinkItem>
+            </FooterLinks>
+
+            <div
+              className="lang-selection-container"
+              onClick={this.handleToggle}
+            >
+              <Icon icon={iosWorld} size={20} />
+              日本語
+              <Icon icon={arrowSortedDown} />
             </div>
-          )}
-          <p>Netflix 日本</p>
-        </SiteFooter>
-      </SiteFooterWrapper>
-    </FooterContainer>
-  );
-};
+            {/*toggle language content*/}
+            {this.state.langContent && (
+              <div className="lang-toggle">
+                <ul>
+                  <li>日本語</li>
+                </ul>
+                <ul>
+                  <li>English</li>
+                </ul>
+              </div>
+            )}
+            <p>Netflix 日本</p>
+          </SiteFooter>
+        </SiteFooterWrapper>
+      </FooterContainer>
+    );
+  }
+}
 
 export default Footer;
 
@@ -95,6 +98,14 @@ const FooterContainer = styled.footer`
     margin: 0;
     display: flex;
     align-items: center;
+  }
+
+  .lang-toggle li {
+    cursor: pointer;
+  }
+
+  .lang-toggle ul:hover {
+    background-color: #0041a2;
   }
 `;
 

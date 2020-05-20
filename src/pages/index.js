@@ -63,6 +63,16 @@ class Main extends Component {
         CTA: null,
       },
     ],
+    footer: [
+      {
+        text: "よくあるご質問",
+        id: "",
+      },
+      {
+        text: "ヘルプセンター",
+        id: "",
+      },
+    ],
   };
 
   render() {
@@ -71,7 +81,7 @@ class Main extends Component {
       <div>
         <Header />
         {contents}
-        <Footer />
+        <Footer footer={this.state.footer} />
       </div>
     );
   }
